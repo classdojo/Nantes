@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 public protocol NantesLabelDelegate: AnyObject {
     func attributedLabel(_ label: NantesLabel, didSelectAddress addressComponents: [NSTextCheckingKey: String])
     func attributedLabel(_ label: NantesLabel, didSelectDate date: Date, timeZone: TimeZone, duration: TimeInterval)

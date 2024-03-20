@@ -9,6 +9,7 @@
 import UIKit
 
 extension NSAttributedString {
+    @MainActor
     static func attributes(from label: NantesLabel) -> [NSAttributedString.Key: Any] {
         var attributes: [NSAttributedString.Key: Any] = [:]
 

@@ -28,6 +28,7 @@ extension NantesLabel {
             self.text = text
         }
 
+        @MainActor
         public init(label: NantesLabel, result: NSTextCheckingResult?, text: String?) {
             self.init(attributes: label.linkAttributes, activeAttributes: label.activeLinkAttributes, inactiveAttributes: label.inactiveLinkAttributes, linkTappedBlock: nil, result: result, text: text)
         }
