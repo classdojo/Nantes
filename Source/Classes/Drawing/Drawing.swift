@@ -115,9 +115,15 @@ extension NantesLabel {
         CTFrameGetLineOrigins(frame, CFRangeMake(0, numberOfLines), &lineOrigins)
 
         for lineIndex in 0..<lineOrigins.count {
+            guard lines.indices.contains(lineIndex) else {
+                continue
+            }
+            let line = lines[lineIndex]
+            if CFGetTypeID(line) != CTLineGetTypeID() {
+                continue
+            }
             let lineOrigin = lineOrigins[lineIndex]
             context.textPosition = lineOrigin
-            let line = lines[lineIndex]
 
             var yOffset = lineOrigin.y
 
